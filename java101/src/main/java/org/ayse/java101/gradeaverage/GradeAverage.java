@@ -1,4 +1,4 @@
-package org.ayse.java101.notortalamasi;
+package org.ayse.java101.gradeaverage;
 
 import java.util.Scanner;
 
