@@ -22,12 +22,19 @@ public class GradeAverage {
   private static final double NUMBER_OF_CLASSES =6.0;
 
   public GradeAverage(){
+    System.out.println("Please enter your grades");
     Scanner scanner = new Scanner(System.in);
+    System.out.print("Math: ");
     math = scanner.nextInt();
+    System.out.print("Physic: ");
     physic =scanner.nextInt();
+    System.out.print("Chemistry: ");
     chemistry =scanner.nextInt();
+    System.out.print("Turkish: ");
     turkish =scanner.nextInt();
+    System.out.print("History: ");
     history =scanner.nextInt();
+    System.out.print("Music: ");
     music =scanner.nextInt();
   }
 
