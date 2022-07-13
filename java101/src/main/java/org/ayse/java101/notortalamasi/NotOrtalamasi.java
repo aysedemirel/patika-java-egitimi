@@ -1,4 +1,4 @@
-package org.ayse.java101;
+package org.ayse.java101.notortalamasi;
 
 import java.util.Scanner;
 
