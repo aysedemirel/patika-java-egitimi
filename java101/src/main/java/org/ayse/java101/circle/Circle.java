@@ -8,7 +8,8 @@ import java.util.Scanner;
  * Alan Formülü : π * r * r;
  * Çevre Formülü : 2 * π * r;
  * Yarıçapı r, merkez açısının ölçüsü 𝛼 olan daire diliminin alanı bulan programı yazınız.
- * Formül : (𝜋 * (r*r) * 𝛼) / 360*/
+ * Formül : (𝜋 * (r*r) * 𝛼) / 360
+ * */
 public class Circle {
 private final double radius;
 private final double centerAngle;

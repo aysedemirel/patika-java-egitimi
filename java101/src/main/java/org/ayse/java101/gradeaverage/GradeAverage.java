@@ -11,7 +11,8 @@ import java.util.Scanner;
  * eğer kullanıcının ortalaması 60'dan büyük ise ekrana "Sınıfı Geçti" ,
  * küçük ise "Sınıfta Kaldı" yazsın.
  *
- * Not : If ve Else kullanılmayacak...*/
+ * Not : If ve Else kullanılmayacak...
+ * */
 public class GradeAverage {
   private final int math;
   private final int physic;

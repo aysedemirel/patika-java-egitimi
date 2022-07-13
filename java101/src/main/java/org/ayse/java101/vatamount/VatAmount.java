@@ -12,7 +12,8 @@ import java.util.Scanner;
  *
  * Eğer girilen tutar 0 ve 1000 TL arasında ise KDV oranı %18 ,
  * tutar 1000 TL'den büyük ise KDV oranını %8 olarak
- * KDV tutarı hesaplayan programı yazınız.*/
+ * KDV tutarı hesaplayan programı yazınız.
+ * */
 public class VatAmount {
   private static final double VAT_PERCENTAGE_HIGH=0.18;
   private static final double VAT_PERCENTAGE_LOW=0.08;

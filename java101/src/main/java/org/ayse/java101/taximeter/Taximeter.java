@@ -7,7 +7,8 @@ import java.util.Scanner;
  *
  * Taksimetre KM başına 2.20 TL tutmaktadır.
  * Minimum ödenecek tutar 20 TL'dir. 20 TL altında ki ücretlerde yine 20 TL alınacaktır.
- * Taksimetre açılış ücreti 10 TL'dir.*/
+ * Taksimetre açılış ücreti 10 TL'dir.
+ * */
 public class Taximeter {
   private static final double PER_KM = 2.20;
   private static final double START_PRICE = 10.0;
