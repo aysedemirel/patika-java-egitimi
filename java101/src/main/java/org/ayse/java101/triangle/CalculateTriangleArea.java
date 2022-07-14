@@ -1,4 +1,4 @@
-package org.ayse.java101.traianglearea;
+package org.ayse.java101.triangle;
 
 import java.util.Scanner;
 
