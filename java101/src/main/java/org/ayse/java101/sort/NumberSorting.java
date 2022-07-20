@@ -52,8 +52,11 @@ public class NumberSorting {
 
     String middleStr = (middle == number1) ? FIRST : SECOND;
     middleStr = (middle == number3) ? THIRD : middleStr;
-
-    System.out.println(min + " - " + middle + " - " + max);
-    System.out.println(minStr + " - " + middleStr + " - " + maxStr);
+    if (min == max) {
+      System.out.println("These three numbers are equal");
+    } else {
+      System.out.println(min + " - " + middle + " - " + max);
+      System.out.println(minStr + " - " + middleStr + " - " + maxStr);
+    }
   }
 }
