@@ -26,7 +26,7 @@ public class ActivitySuggestor {
     ActivitySuggestor activitySuggestor = new ActivitySuggestor();
     activitySuggestor.suggestActivity();
   }
-
+ 
   public void suggestActivity() {
     if (heat < 5) {
       System.out.println("Skiing is a good option");

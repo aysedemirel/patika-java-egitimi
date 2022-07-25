@@ -3,14 +3,14 @@ package org.ayse.java101.triangle;
 import java.util.Scanner;
 
 /**
- * Java ile kullanıcıdan dik kenarlarının uzunluğunu alan
- * ve hipotenüsü hesaplayan programı yazın.
- * */
+ * Java ile kullanıcıdan dik kenarlarının uzunluğunu alan ve hipotenüsü hesaplayan programı yazın.
+ */
 public class CalculateHypotenuse {
+
   private final int edge1;
   private final int edge2;
 
-  public CalculateHypotenuse(){
+  public CalculateHypotenuse() {
     System.out.println("Please enter edges of triangle");
     Scanner scanner = new Scanner(System.in);
     System.out.print("Edge 1: ");
@@ -19,14 +19,14 @@ public class CalculateHypotenuse {
     edge2 = scanner.nextInt();
   }
 
-  public void calculateHypo(){
-    double hypo = Math.sqrt((edge1*edge1)+(edge2*edge2));
-    System.out.println("Hypotenuse: "+ hypo);
-  }
-
   public static void main(String[] args) {
     CalculateHypotenuse calculateHypotenuse = new CalculateHypotenuse();
     calculateHypotenuse.calculateHypo();
+  }
+
+  public void calculateHypo() {
+    double hypo = Math.sqrt((edge1 * edge1) + (edge2 * edge2));
+    System.out.println("Hypotenuse: " + hypo);
   }
 
 }
