@@ -24,8 +24,8 @@ public class AverageCalculator {
   public void calculate() {
     double sum = 0;
     double totalNum = 0;
-    for (int i = 0; i <= number; i++) {
-      if (i % 3 == 0 || i % 4 == 0) {
+    for (int i = 1; i <= number; i++) {
+      if (i % 3 == 0 && i % 4 == 0) {
         sum += i;
         totalNum++;
       }
