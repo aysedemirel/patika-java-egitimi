@@ -1,4 +1,4 @@
-package org.ayse.java101.condition.leapyear;
+package org.ayse.java101.condition;
 
 import java.util.Scanner;
 

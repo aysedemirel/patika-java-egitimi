@@ -1,4 +1,4 @@
-package org.ayse.java101.condition.sort;
+package org.ayse.java101.condition;
 
 import java.util.Scanner;
 

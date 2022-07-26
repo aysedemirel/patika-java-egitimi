@@ -1,4 +1,4 @@
-package org.ayse.java101.condition.taximeter;
+package org.ayse.java101.condition;
 
 import java.util.Scanner;
 
