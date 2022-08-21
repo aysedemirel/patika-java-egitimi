@@ -21,7 +21,7 @@ public class ExponentCalculation {
       System.out.print("Enter the exponent: ");
       exponent = scanner.nextInt();
       System.out.println("Result: " + getResult(exponent, base));
-      System.out.println("If you want to exit, please press 0: (or continue with another number)");
+      System.out.println("If you want to exit, please enter 0: (or continue with another number)");
       isExit = scanner.nextInt() == 0;
     } while (!isExit);
   }
