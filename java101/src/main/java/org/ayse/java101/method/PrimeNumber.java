@@ -16,7 +16,9 @@ public class PrimeNumber {
     do {
       System.out.print("Number: ");
       number = scanner.nextInt();
-      System.out.println(getResult(number));
+      String result = isPrime(number, 2) ? " is a prime number." : " is not a prime number.";
+      System.out.println("Recursive: " + number + result);
+      System.out.println("Loop: " + getResult(number));
       System.out.print(
           "If you want to exit, please enter 0 (or you can continue with another number) : ");
       isExit = scanner.nextInt() == 0;
@@ -25,6 +27,19 @@ public class PrimeNumber {
 
   public static void main(String[] args) {
     new PrimeNumber();
+  }
+
+  private boolean isPrime(int number, int i) {
+    if (number <= 2) {
+      return number == 2;
+    }
+    if (number % i == 0) {
+      return false;
+    }
+    if (i * i > number) {
+      return true;
+    }
+    return isPrime(number, i + 1);
   }
 
   private String getResult(int number) {
