@@ -29,7 +29,7 @@ public class MethodByPattern {
         System.out.println(number);
       } else {
         System.out.print(number + " ");
-        getPatternn(number - 5, false);
+        getPattern(number - 5, false);
       }
       System.out.println("\nIf you want to exit, please enter 0 (or enter another number) : ");
       isExit = (scanner.nextInt() == 0);
@@ -40,14 +40,14 @@ public class MethodByPattern {
     new MethodByPattern();
   }
 
-  private void getPatternn(int no, boolean isReverse) {
+  private void getPattern(int no, boolean isReverse) {
     System.out.print(no + " ");
     if (no != number) {
       if (!isReverse) {
         isReverse = (no <= number && no <= 0);
       }
       int pattern = isReverse ? 5 : -5;
-      getPatternn(no + pattern, isReverse);
+      getPattern(no + pattern, isReverse);
     }
   }
 }
