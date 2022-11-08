@@ -10,6 +10,7 @@ public class MineSweeper {
   private final int row;
   private final int column;
   private final Scanner scanner;
+  private int success = 0;
   private char[][] gameMatrix;
   private Map<Integer, Integer> mineIndex;
 
@@ -20,8 +21,13 @@ public class MineSweeper {
     row = scanner.nextInt();
     System.out.print("Column: ");
     column = scanner.nextInt();
-    fullMatrix();
-    startGame();
+    if (row * column > 0) {
+      success = row * column;
+      fullMatrix();
+      startGame();
+    } else {
+      System.out.println("Exit....");
+    }
   }
 
   public static void main(String[] args) {
@@ -33,7 +39,6 @@ public class MineSweeper {
     int rowIndex = -1;
     int columnIndex = -1;
     boolean isFinish = false;
-    int right = row * column;
     while (!isFinish) {
       boolean isBoundFalse = true;
       while (isBoundFalse) {
@@ -53,9 +58,21 @@ public class MineSweeper {
         break;
       }
       int gain = 0;
-      gameMatrix[rowIndex][columnIndex] = (char) gain;
-      right--;
-      if (right == 0) {
+      if (columnIndex < (gameMatrix[0].length - 1)) {
+        gain += gameMatrix[rowIndex][columnIndex + 1] == '*' ? 1 : 0;
+      }
+      if (columnIndex > 0) {
+        gain += gameMatrix[rowIndex][columnIndex - 1] == '*' ? 1 : 0;
+      }
+      if (rowIndex > 0) {
+        gain += gameMatrix[rowIndex - 1][columnIndex] == '*' ? 1 : 0;
+      }
+      if (rowIndex < (gameMatrix.length - 1)) {
+        gain += gameMatrix[rowIndex + 1][columnIndex] == '*' ? 1 : 0;
+      }
+      gameMatrix[rowIndex][columnIndex] = Character.forDigit(gain, 10);
+      success--;
+      if (success == 0) {
         isFinish = true;
         System.out.println("CONGRATULATIONS!!!!");
       }
@@ -81,8 +98,8 @@ public class MineSweeper {
       mineIndex.put(randomRow, randomColumn);
       gameMatrix[randomRow][randomColumn] = '*';
       randomCount--;
+      success--;
     }
-
   }
 
   private void printMatrix() {
