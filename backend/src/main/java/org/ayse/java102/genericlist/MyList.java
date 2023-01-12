@@ -41,5 +41,52 @@ public class MyList<T> {
     arr[nextIndex++] = element;
   }
 
- 
+  public Object removeObject(T element) {
+    for (int i = 0; i < nextIndex; i++) {
+      if (arr[i] == element) {
+        return remove(i);
+      }
+    }
+    return null;
+  }
+
+  public Object remove(int index) {
+    if (index < 0 || index > nextIndex) {
+      return null;
+    }
+    Object[] temp = arr;
+    Object result = arr[index];
+    if (nextIndex - 1 - index >= 0) {
+      System.arraycopy(arr, index + 1, temp, index, nextIndex - 1 - index);
+      nextIndex--;
+      arr = temp;
+    }
+    return result;
+  }
+
+  public Object get(int index) {
+    if (index > nextIndex || index < 0) {
+      return null;
+    }
+    return arr[index];
+  }
+
+  public Object set(int index, T data) {
+    if (index > nextIndex || index < 0) {
+      return null;
+    }
+    arr[index] = data;
+    return data;
+  }
+
+  public String toString() {
+    StringBuilder st = new StringBuilder();
+    st.append("[");
+    for (int i = 0; i < nextIndex; i++) {
+      st.append(arr[i]).append(",");
+    }
+    st.deleteCharAt(st.length() - 1);
+    st.append("]");
+    return st.toString();
+  }
 }

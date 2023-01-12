@@ -16,20 +16,37 @@ public class MyListMain {
      * Capacity : 20
      * Size : 11
      * */
-    MyList<Integer> list = new MyList<>();
-    printList(list);
-    list.add(10);
-    list.add(20);
-    list.add(30);
-    list.add(40);
-    printList(list);
-    list.add(50);
-    list.add(60);
-    list.add(70);
-    list.add(80);
-    list.add(90);
-    list.add(100);
-    list.add(110);
-    printList(list);
+//    MyList<Integer> list1 = new MyList<>();
+//    printList(list1);
+//    list1.add(10);
+//    list1.add(20);
+//    list1.add(30);
+//    list1.add(40);
+//    printList(list1);
+//    list1.add(50);
+//    list1.add(60);
+//    list1.add(70);
+//    list1.add(80);
+//    list1.add(90);
+//    list1.add(100);
+//    list1.add(110);
+//    printList(list1);
+
+    //-----------------------------
+    /*
+     * 2. index : 30
+     * 2. index : 40
+     * [100,20,40]
+     */
+    MyList<Integer> list2 = new MyList<>();
+    list2.add(10);
+    list2.add(20);
+    list2.add(30);
+    System.out.println("2. index : " + list2.get(2));
+    list2.remove(2);
+    list2.add(40);
+    list2.set(0, 100);
+    System.out.println("2. index : " + list2.get(2));
+    System.out.println(list2);
   }
 }
