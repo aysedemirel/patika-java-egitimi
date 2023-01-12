@@ -1,11 +1,14 @@
 package org.ayse.java102.genericlist;
 
+/**
+ * @author aysedemireldeniz
+ */
 public class MyList<T> {
 
   private static final int DEFAULT_CAPACITY = 10;
   private int capacity;
   private Object[] arr;
-  private int nextIndex = 0;
+  private int lastIndex = 0;
 
   public MyList() {
     capacity = DEFAULT_CAPACITY;
@@ -27,7 +30,7 @@ public class MyList<T> {
   }
 
   public int size() {
-    return nextIndex;
+    return lastIndex;
   }
 
   public int getCapacity() {
@@ -35,14 +38,14 @@ public class MyList<T> {
   }
 
   public void add(T element) {
-    if (nextIndex == capacity) {
+    if (lastIndex == capacity) {
       grow();
     }
-    arr[nextIndex++] = element;
+    arr[lastIndex++] = element;
   }
 
   public Object removeObject(T element) {
-    for (int i = 0; i < nextIndex; i++) {
+    for (int i = 0; i < lastIndex; i++) {
       if (arr[i] == element) {
         return remove(i);
       }
@@ -51,28 +54,28 @@ public class MyList<T> {
   }
 
   public Object remove(int index) {
-    if (index < 0 || index > nextIndex) {
+    if (index < 0 || index > lastIndex) {
       return null;
     }
     Object[] temp = arr;
     Object result = arr[index];
-    if (nextIndex - 1 - index >= 0) {
-      System.arraycopy(arr, index + 1, temp, index, nextIndex - 1 - index);
-      nextIndex--;
+    if (lastIndex - 1 - index >= 0) {
+      System.arraycopy(arr, index + 1, temp, index, lastIndex - 1 - index);
+      lastIndex--;
       arr = temp;
     }
     return result;
   }
 
   public Object get(int index) {
-    if (index > nextIndex || index < 0) {
+    if (index > lastIndex || index < 0) {
       return null;
     }
     return arr[index];
   }
 
-  public Object set(int index, T data) {
-    if (index > nextIndex || index < 0) {
+  public T set(int index, T data) {
+    if (index > lastIndex || index < 0) {
       return null;
     }
     arr[index] = data;
@@ -82,11 +85,63 @@ public class MyList<T> {
   public String toString() {
     StringBuilder st = new StringBuilder();
     st.append("[");
-    for (int i = 0; i < nextIndex; i++) {
+    for (int i = 0; i < lastIndex; i++) {
       st.append(arr[i]).append(",");
     }
-    st.deleteCharAt(st.length() - 1);
+    if (st.toString().contains(",")) {
+      st.deleteCharAt(st.length() - 1);
+    }
     st.append("]");
     return st.toString();
   }
+
+  public int indexOf(T data) {
+    for (int i = 0; i < lastIndex; i++) {
+      if (data.equals(arr[i])) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  public int lastIndexOf(T data) {
+    for (int i = lastIndex - 1; i >= 0; i--) {
+      if (data.equals(arr[i])) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  public boolean isEmpty() {
+    return lastIndex == 0;
+  }
+
+  public T[] toArray() {
+    return (T[]) arr;
+  }
+
+  public void clear() {
+    arr = new Object[DEFAULT_CAPACITY];
+    capacity = DEFAULT_CAPACITY;
+    lastIndex = 0;
+  }
+
+  public MyList<T> subList(int start, int finish) {
+    MyList<T> result = new MyList<>();
+    for (int i = start; i <= finish; i++) {
+      result.add((T) arr[i]);
+    }
+    return result;
+  }
+
+  public boolean contains(T data) {
+    for (int i = 0; i < lastIndex; i++) {
+      if (arr[i] == data) {
+        return true;
+      }
+    }
+    return false;
+  }
+
 }
