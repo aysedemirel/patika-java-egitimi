@@ -73,7 +73,7 @@ public class PatikaStore {
                         int ch = scanner.nextInt();
                         switch (ch) {
                             case 1 -> {
-                                // TODO: notebook list, delete
+                                notebookActions();
                             }
                             case 2 -> {
                                 // TODO: cellphone
@@ -86,14 +86,88 @@ public class PatikaStore {
                                 }
                                 System.out.println(brands);
                             }
-                            default -> {
+                            case 0 -> {
                                 isStoreOpen = false;
+                            }
+                            default -> {
+                                System.out.println("Sorry, we couldn't solve the input, please try again...");
                             }
                         }
 
                     }
                 }
         ).start();
+    }
+
+    private void notebookActions() {
+        printNotebookActions();
+        int action = scanner.nextInt();
+        switch (action) {
+            case 0 -> {
+                deleteNotebook();
+            }
+            case 1 -> {
+                addNotebook();
+            }
+            case 2 -> {
+                listNotebook();
+            }
+            case 3 -> {
+                filterNotebooksByBrand();
+            }
+            case 4 -> {
+                filterNotebooksById();
+            }
+            case 5 -> {
+                // FIXME: In method->return;
+                System.out.println("Main menu...");
+            }
+            default -> {
+                System.out.println("Sorry, we couldn't solve the input. Please try again...");
+            }
+        }
+    }
+
+    private void printNotebookActions() {
+        String notebookMenu = """
+                0 - Delete notebook (by id)
+                1 - Add notebook
+                2 - List all notebooks
+                3 - Filter notebooks (by brand)
+                4 - Filter notebooks (by id)
+                5 - Return main menu
+                """;
+        System.out.println(notebookMenu);
+    }
+
+    private void deleteNotebook() {
+        // TODO: Delete notebook (by id)
+    }
+
+    private void addNotebook() {
+        // TODO: Add notebook
+    }
+
+    private void listNotebook() {
+        // TODO: List all notebooks
+           /*
+                                * Notebook Listesi
+----------------------------------------------------------------------------------------------------
+| ID | Ürün Adı                      | Fiyat     | Marka     | Depolama  | Ekran     | RAM         |
+----------------------------------------------------------------------------------------------------
+| 1  | HUAWEI Matebook 14            | 7000.0 TL | Huawei    | 512       | 14.0      | 16          |
+| 2  | LENOVO V14 IGL                | 3699.0 TL | Lenovo    | 1024      | 14.0      | 8           |
+| 3  | ASUS Tuf Gaming               | 8199.0 TL | Asus      | 2048      | 15.6      | 32          |
+----------------------------------------------------------------------------------------------------
+* */
+    }
+
+    private void filterNotebooksByBrand() {
+        // TODO: Filter notebooks (by brand)
+    }
+
+    private void filterNotebooksById() {
+        // TODO: Filter notebooks (by id)
     }
 
     private void printMenu() {
