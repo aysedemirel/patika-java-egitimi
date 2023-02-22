@@ -33,10 +33,10 @@ public class Phone implements Product {
     private int ram;
     private Color color;
 
-    public Phone(UUID id, String name, double price, double discount,
+    public Phone(String name, double price, double discount,
                  int count, Brand brand, int storage, int screenSize,
                  int power, int ram, Color color) {
-        this.id = id;
+        this.id = UUID.randomUUID();
         this.name = name;
         this.price = price;
         this.discount = discount;
@@ -138,5 +138,10 @@ public class Phone implements Product {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    @Override
+    public String getProductInfo() {
+        return getName();
     }
 }

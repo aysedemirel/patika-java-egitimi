@@ -28,9 +28,9 @@ public class Computer implements Product {
     private int screenSize;
     private int ram;
 
-    public Computer(UUID id, String name, double price, double discount,
+    public Computer(String name, double price, double discount,
                     int count, Brand brand, int storage, int screenSize, int ram) {
-        this.id = id;
+        this.id = UUID.randomUUID();
         this.name = name;
         this.price = price;
         this.discount = discount;
@@ -114,5 +114,10 @@ public class Computer implements Product {
 
     public void setRam(int ram) {
         this.ram = ram;
+    }
+
+    @Override
+    public String getProductInfo() {
+        return getName();
     }
 }

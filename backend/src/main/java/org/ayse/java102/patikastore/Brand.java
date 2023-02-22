@@ -10,6 +10,7 @@ public class Brand {
     private String name;
 
     public Brand(int id, String name) {
+        // FIXME: random unique id
         this.id = id;
         this.name = name;
     }

@@ -4,6 +4,7 @@ import org.ayse.java102.patikastore.product.Computer;
 import org.ayse.java102.patikastore.product.Phone;
 import org.ayse.java102.patikastore.product.Product;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -35,9 +36,9 @@ public class PatikaStore {
         brandList.add(new Brand(4, "Huawei"));
         brandList.add(new Brand(5, "Casper"));
         brandList.add(new Brand(6, "Asus"));
-        brandList.add(new Brand(1, "HP"));
-        brandList.add(new Brand(1, "Xiaomi"));
-        brandList.add(new Brand(1, "Monster"));
+        brandList.add(new Brand(7, "HP"));
+        brandList.add(new Brand(8, "Xiaomi"));
+        brandList.add(new Brand(9, "Monster"));
     }
 
     private final List<Product> productList;
@@ -49,8 +50,10 @@ public class PatikaStore {
         scanner = new Scanner(System.in);
         storeName = "PatikaStore";
         productList = new ArrayList<>();
-        addProductToStore(new Phone());
-        addProductToStore(new Computer());
+        addProductToStore(new Phone("Cell phone", 1000, 10, 1, brandList.get(0),
+                20, 1980, 100, 2, Color.PINK));
+        addProductToStore(new Computer("Laptop", 2000, 3, 1, brandList.get(1), 400, 2000, 190));
+        enterStore();
     }
 
     public static void main(String[] args) {
@@ -66,19 +69,22 @@ public class PatikaStore {
                 () -> {
                     while (isStoreOpen) {
                         printMenu();
+                        System.out.print("Input: ");
                         int ch = scanner.nextInt();
                         switch (ch) {
                             case 1 -> {
                                 // TODO: notebook list, delete
-                                break;
                             }
                             case 2 -> {
                                 // TODO: cellphone
-                                break;
                             }
                             case 3 -> {
-                                // TODO: list brands
-                                break;
+                                StringBuilder brands = new StringBuilder();
+                                // FIXME: Sorted list (alph)
+                                for (Brand brand : brandList) {
+                                    brands.append(" - ").append(brand.getName()).append("\n");
+                                }
+                                System.out.println(brands);
                             }
                             default -> {
                                 isStoreOpen = false;
