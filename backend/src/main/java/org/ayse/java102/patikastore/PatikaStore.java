@@ -150,16 +150,22 @@ public class PatikaStore {
 
     private void listNotebook() {
         // TODO: List all notebooks
-           /*
-                                * Notebook Listesi
-----------------------------------------------------------------------------------------------------
-| ID | Ürün Adı                      | Fiyat     | Marka     | Depolama  | Ekran     | RAM         |
-----------------------------------------------------------------------------------------------------
-| 1  | HUAWEI Matebook 14            | 7000.0 TL | Huawei    | 512       | 14.0      | 16          |
-| 2  | LENOVO V14 IGL                | 3699.0 TL | Lenovo    | 1024      | 14.0      | 8           |
-| 3  | ASUS Tuf Gaming               | 8199.0 TL | Asus      | 2048      | 15.6      | 32          |
-----------------------------------------------------------------------------------------------------
-* */
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("""
+                ----------------------------------------------------------------------------------------------------
+                | ID | Ürün Adı                      | Fiyat     | Marka     | Depolama  | Ekran     | RAM         |
+                """);
+        int i = 1;
+        for (Product product : productList) {
+            if (product.isTheProduct("Laptop")) {
+                stringBuilder.append("----------------------------------------------------------------------------------------------------\n");
+                stringBuilder.append("| ").append(i).append(" | ");
+                stringBuilder.append(product.getProductInfo());
+                i++;
+            }
+        }
+        stringBuilder.append("----------------------------------------------------------------------------------------------------");
+        System.out.println(stringBuilder);
     }
 
     private void filterNotebooksByBrand() {

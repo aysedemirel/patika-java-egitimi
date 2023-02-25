@@ -118,6 +118,8 @@ public class Computer implements Product {
 
     @Override
     public String getProductInfo() {
-        return getName();
+        return getName() + "      |" + getPrice() + "      |" + getBrand().getName()
+                + "      |" + getStorage() + "      |" + getScreenSize() + "      |" + getRam() + " |\n";
     }
+
 }
