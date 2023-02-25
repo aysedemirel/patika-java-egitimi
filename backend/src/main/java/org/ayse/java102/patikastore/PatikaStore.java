@@ -145,11 +145,23 @@ public class PatikaStore {
     }
 
     private void addNotebook() {
-        // TODO: Add notebook
+        Computer notebook = new Computer();
+        System.out.println("Please enter notebook name: ");
+        notebook.setName(scanner.next());
+        System.out.println("Please enter notebook price: ");
+        notebook.setPrice(scanner.nextDouble());
+        System.out.println("Please choose notebook brand: ");
+        notebook.setBrand(brandList.get(scanner.nextInt()));
+        System.out.println("Please enter notebook storage: ");
+        notebook.setStorage(scanner.nextInt());
+        System.out.println("Please enter notebook screen size: ");
+        notebook.setScreenSize(scanner.nextInt());
+        System.out.println("Please enter notebook RAM: ");
+        notebook.setRam(scanner.nextInt());
+        productList.add(notebook);
     }
 
     private void listNotebook() {
-        // TODO: List all notebooks
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("""
                 ----------------------------------------------------------------------------------------------------
